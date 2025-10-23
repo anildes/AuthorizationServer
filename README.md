@@ -22,3 +22,6 @@ Specifies the issuer URI (http://localhost:8081) for tokens.
 This program is part of an OAuth2 Authorization Server implementation, enabling secure token issuance and validation for client applications.
 
 download and compile the program using pom and point to jdk1.8 in your IDE 
+Put  clientId("zuul-gateway-client")    
+ put clientSecret("gateway-secret-123")
+ in the application.properties of your application or resource server 
