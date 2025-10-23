@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 
+      REQUIRED: Inherit from the Spring Boot parent POM.
+      Version 2.7.18 is used as it is the last major release line 
+      that fully supports Java 8 (JDK 1.8).
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.18</version> 
+        <relativePath/> 
+    </parent>
+
+    <!-- Project Coordinates (using your values) -->
+    <groupId>authorizationserver</groupId>
+    <artifactId>authorizationserver</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <properties>
+        <!-- CRITICAL: Set the Java version to 1.8 -->
+        <java.version>1.8</java.version>
+        
+        <!-- 
+          CRITICAL: Use Spring Authorization Server 0.4.0. 
+          This is the highest version compatible with Spring Boot 2.7.x (Java 8).
+          Later versions (1.x+) require Java 17+.
+        -->
+        <spring-security-oauth2-authorization-server.version>0.4.0</spring-security-oauth2-authorization-server.version>
+    </properties>
+
+    <dependencies>
+        <!-- Starter for building web, including RESTful, applications -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Security starter for authentication and authorization -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- The core dependency for OAuth 2.0 Authorization Server functionality -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-authorization-server</artifactId>
+            <version>${spring-security-oauth2-authorization-server.version}</version>
+        </dependency>
+        
+        <!-- Starter for testing Spring Boot applications -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin to package the application as an executable JAR -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    </project>
