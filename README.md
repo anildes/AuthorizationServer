@@ -21,4 +21,4 @@ Authorization Server Settings:
 Specifies the issuer URI (http://localhost:8081) for tokens.
 This program is part of an OAuth2 Authorization Server implementation, enabling secure token issuance and validation for client applications.
 
-downlaod and compile the program using pom and point to jdk1.8 in your IDE 
+download and compile the program using pom and point to jdk1.8 in your IDE 
